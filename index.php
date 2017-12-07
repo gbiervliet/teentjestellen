@@ -16,10 +16,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<?php include('./src/gender.php');
-
-
-		?>
+		<?php include('./src/gender.php'); ?>
 		        
 	</head>
 	<body class="is-loading">
@@ -46,7 +43,7 @@
 						
 		
 						<div id="genderchoice">
-							<form action="index.php" method="post">
+							<form action="?submit=true" method="post">
 					<!-- 			<div class="field">
 									<input type="text" name="name" id="name" placeholder="Name" />
 								</div>
@@ -80,11 +77,27 @@
 										<ul class="actions">
 											<li><input type="submit" name="submit" value="Raden" ></li>
 										</ul>';
+									} else {
+										echo '
+										<div class="field" >
+											<label>Dank je wel voor het stemmen!</label>
+										</div>';
 									}
 								?>
+								
+								
+
 							</form>
 						</div>
 						<hr />
+						<div id="poll-results">
+							<?php
+								echo 'Jongen ' . $maleCount . '
+								      Meisje '. $femaleCount;
+
+							 ?>
+					
+						</div>
 					</section>
 
 				<!-- Footer -->

@@ -1,11 +1,11 @@
 <?php
 	include 'database.php';
 
-	$choice = $_POST["gender"];
-	if($choice == "female") {
-		putChoiceInDB('girl');
-
-	} else {
-		putChoiceInDB('boy');
+	if($_GET["submit"] =='true') {
+		$choice = $_POST["gender"];
+		putChoiceInDB($choice);
 	}
+	
+	$maleCount = getCountFromDatabase('male');
+	$femaleCount = getCountFromDatabase('female');
 ?>
