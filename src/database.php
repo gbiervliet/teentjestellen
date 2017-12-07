@@ -24,11 +24,11 @@
 
 		try {
 		    $dbh = new PDO('mysql:host=' . $serverAddr .';dbname=teentjestellen_nl_teentjesdb', $username, $password);
-			   if($choice == "girl") {
-			   	echo 'chosen a girl<br>';
-			   $dbh->query('UPDATE gender SET girl = girl + 1');
-			   } else {
+			   if($choice == "boy") {
 			   	echo 'chosen a boy<br>';
+			   	$dbh->query('UPDATE gender SET votes=votes+1 WHERE id=0');
+			   } else {
+			    $dbh->query('UPDATE gender SET votes=votes+1 WHERE id=1');
 			   }
 
 		    
