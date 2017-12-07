@@ -2,16 +2,16 @@
 	include 'database.php';
 
 	$choice = $_POST["gender"];
-
-	if(choice ==='female') {
+	echo 'chosen<br>';
+	if($choice == "female") {
+		echo 'chosen a girl<br>';
 		putChoiceInDB('girl');
 
 	} else {
+		echo 'chosen a boy<br>';
 		putChoiceInDB('boy');
 	}
 
-	getDatabaseData();
-
-	die(var_dump($choice));
+	// getDatabaseData();
 
 ?>
