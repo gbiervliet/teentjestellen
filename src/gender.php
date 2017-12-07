@@ -1,7 +1,10 @@
 <?php
+	session_start();
 	include 'database.php';
 
-	if($_GET["submit"] =='true') {
+	if($_GET["submit"] =='true' && !$_SESSION['hasvoted']) {
+
+		$_SESSION['hasvoted'] = 1;
 		$choice = $_POST["gender"];
 		putChoiceInDB($choice);
 	}

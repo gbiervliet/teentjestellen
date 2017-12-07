@@ -1,3 +1,12 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+
+		ini_set('session.gc_maxlifetime', (3600 * 24) * 50);
+		session_set_cookie_params( (3600 * 24) * 50);
+		session_start(); 			
+	} 
+
+?>
 <!DOCTYPE HTML>
 <!--
 	
@@ -67,7 +76,7 @@
 									<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
 								</div> -->
 								<?php 
-									if($choice =="") {
+									if($choice =="" && !$_SESSION['hasvoted']) {
 										echo '
 										<div class="field" >
 											<label>Wat denk jij dat het wordt?</label>
